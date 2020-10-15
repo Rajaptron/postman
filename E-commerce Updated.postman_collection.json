@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "d2da22f7-b8ac-425d-9d7c-a2da1e2a8b9e",
+		"name": "E-commerce Updated",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"fullName\": \"Abhishek\",\n    \"phoneNumber\":\"9716345151\",\n    \"emailAddress\" : \"abhishek@gmail.com\",\n    \"state\" : \"pending\"\n}"
+				},
+				"url": {
+					"raw": "https://48629007-0096-4c76-aa7d-c07bac393824.mock.pstmn.io/save",
+					"protocol": "https",
+					"host": [
+						"48629007-0096-4c76-aa7d-c07bac393824",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"save"
+					]
+				},
+				"description": "This will also create a cart will all the null fields"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"fullName\": \"Abhishek\",\n    \"phoneNumber\":\"9716345151\",\n    \"emailAddress\" : \"abhishek@gmail.com\",\n    \"state\" : \"pending\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/save",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"save"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\"customerId\":1,\"fullName\": \"Abhishek\",\"phoneNumber\":\"9716345151\",\"emailAddress\" : \"abhishek@gmail.com\",\n \"state\" : \"pending\"\n}"
+				}
+			]
+		},
+		{
+			"name": "cart/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://48629007-0096-4c76-aa7d-c07bac393824.mock.pstmn.io/cart/1",
+					"protocol": "https",
+					"host": [
+						"48629007-0096-4c76-aa7d-c07bac393824",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"cart",
+						"1"
+					]
+				},
+				"description": "/cart/{cartId} This will display the cart created from user registration ."
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/cart/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"1"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\"cartId\": 1,\"originalPrice\": null,\"totalDiscount\": null,\"sellingPrice\": null,\"amountPayable\": null,\"shippingfee\": \"Free\",\"cartItem\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "cart/1/product/1/2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://48629007-0096-4c76-aa7d-c07bac393824.mock.pstmn.io/cart/1/product/1/2?",
+					"protocol": "https",
+					"host": [
+						"48629007-0096-4c76-aa7d-c07bac393824",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"cart",
+						"1",
+						"product",
+						"1",
+						"2"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				},
+				"description": "/cart/{cartId}/product/{productId}/{quantity}. if the product is already in cart it will increse the quantity else it will add a new entry for the product"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/cart/1/product/1/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"1",
+								"product",
+								"1",
+								"2"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n\"cartId\": 1,\n\"originalPrice\": \"₹25000\",\n\"totalDiscount\": \"10%\",\n\"sellingPrice\": \"₹22500\",\n\"amountPayable\": \"₹22500\",\n\"shippingfee\": \"Free\",\n\"cartItem\": [\n{\n\"cartitemId\": 3,\n\"product\": {\n\"productId\": 1,\n\"productDetails\": \"4gb\",\n\"productName\": \"Mobile\",\n\"actualPrice\": \"₹25000\",\n\"discountPercentage\": \"10%\",\n\"discountedPrice\": \"₹22500\",\n\"unitInStock\": 222,\n\"productImage\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmobile&psig=AOvVaw2cjBqnTEdwWQ2CRRsZq1o2&ust=1592995555121000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNiciIbhl-oCFQAAAAAdAAAAABAD\",\n\"isProductIncart\": true,\n\"productQuantityInCart\": 1,\n\"maxQuantityForCart\": 5\n},\n\"totalPrice\": \"₹22500\",\"quantity\": 2}    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cart/remove/1/product/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://48629007-0096-4c76-aa7d-c07bac393824.mock.pstmn.io/cart/remove/1/product/1",
+					"protocol": "https",
+					"host": [
+						"48629007-0096-4c76-aa7d-c07bac393824",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"cart",
+						"remove",
+						"1",
+						"product",
+						"1"
+					]
+				},
+				"description": "/cart/remove/{cartId}/product/{productId}. If there are more than 1 quantity of a product it will decrease its quantity by 1 else it will remove the item from cart"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/cart/remove/1/product/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"remove",
+								"1",
+								"product",
+								"1"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n\"cartId\": 1,\n\"originalPrice\": \"₹25000\",\n\"totalDiscount\": \"10%\",\n\"sellingPrice\": \"₹22500\",\n\"amountPayable\": \"₹22500\",\n\"shippingfee\": \"Free\",\n\"cartItem\": [\n{\n\"cartitemId\": 3,\n\"product\": {\n\"productId\": 1,\n\"productDetails\": \"4gb\",\n\"productName\": \"Mobile\",\n\"actualPrice\": \"₹25000\",\n\"discountPercentage\": \"10%\",\n\"discountedPrice\": \"₹22500\",\n\"unitInStock\": 222,\n\"productImage\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmobile&psig=AOvVaw2cjBqnTEdwWQ2CRRsZq1o2&ust=1592995555121000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNiciIbhl-oCFQAAAAAdAAAAABAD\",\n\"isProductIncart\": true,\n\"productQuantityInCart\": 1,\n\"maxQuantityForCart\": 5\n},\n\"totalPrice\": \"₹22500\",\"quantity\": 1}    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cart/delete/1/product/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://48629007-0096-4c76-aa7d-c07bac393824.mock.pstmn.io/cart/delete/1/product/1",
+					"protocol": "https",
+					"host": [
+						"48629007-0096-4c76-aa7d-c07bac393824",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"cart",
+						"delete",
+						"1",
+						"product",
+						"1"
+					]
+				},
+				"description": "/cart/delete/{cartId}/product/{productId}. this is remove all the quantities of a particular product from the cart"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/cart/delete/1/product/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"delete",
+								"1",
+								"product",
+								"1"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n\"cartId\": 1,\n\"originalPrice\": \"\",\n\"totalDiscount\": \"\",\n\"sellingPrice\": \"\",\n\"amountPayable\": \"\",\n\"shippingfee\": \"\",\n\"cartItem\": []\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
